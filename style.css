@@ -759,8 +759,7 @@ a {
 
 @media (max-width: 980px) {
   .hero-panel,
-  .showcase-grid,
-  .service-grid {
+  .showcase-grid {
     grid-template-columns: 1fr;
   }
 
@@ -773,7 +772,11 @@ a {
   }
 
   .link-stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -791,7 +794,11 @@ a {
     padding: 20px;
   }
 
-  .brand-row,
+  .brand-row {
+    gap: 16px;
+    align-items: flex-start;
+  }
+
   .section-head,
   .cta-panel {
     flex-direction: column;
@@ -799,24 +806,49 @@ a {
   }
 
   .hero-side {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .quick-actions,
+  .quick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .link-stack,
+  .service-grid,
   .reel-rail {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .quick-card {
+    min-height: 104px;
+    padding: 14px 10px 12px;
+  }
+
+  .quick-card img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .link-item {
+    min-height: 100px;
+    padding: 16px;
+  }
+
+  .link-item img {
+    width: 48px;
+    height: 48px;
   }
 
   .lockup-title strong {
     font-size: 1.8rem;
   }
 
-  .button-row,
-  .button {
+  .button-row {
     width: 100%;
   }
 
   .button {
+    flex: 1 1 180px;
     justify-content: center;
   }
 
@@ -831,9 +863,25 @@ a {
 }
 
 @media (max-width: 560px) {
-  .quick-actions,
+  .brand-row {
+    flex-direction: column;
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-side,
+  .link-stack,
+  .service-grid,
   .reel-rail {
     grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+    flex-basis: 100%;
+    justify-content: center;
   }
 
   .avatar-ring {
@@ -841,12 +889,21 @@ a {
     height: 100px;
   }
 
+  .brand-copy h1 {
+    font-size: clamp(2.45rem, 13vw, 3.35rem);
+  }
+
+  .featured-reel video {
+    aspect-ratio: 4 / 5;
+  }
+
   .meta-row {
     flex-direction: column;
   }
 
   .meta-row a,
-  .save-chip {
+  .save-chip,
+  .button {
     width: 100%;
     text-align: center;
   }
